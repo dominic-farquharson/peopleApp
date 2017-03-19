@@ -13,6 +13,9 @@ const people = require('./routes/people');
 // invoking express, setting it to a variable
 const app = express();
 
+// Environment variable
+require('dotenv').config();
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
