@@ -8,16 +8,27 @@
     <!-- Header Partial -->
     <% include ../partials/header.ejs %>
     <!-- Redirecting to Create Person form -->
-    <a href="/people/new">Create New Person</a>
-    <!-- Retrieving all people. Looping through people object.-->
-    <% for(let person of people) { %>
-      <!-- name property -->
-      <div>
-         <p><%= person.name %> </p>
-         <!-- Link to view individual person -->
-         <a href=/people/<%= person.id %>>View</a>
-       </div>
-    <% } %>
-
+    <a style="width:25%; margin-bottom:20px;" class="uk-button uk-button-primary uk-align-center" href="/people/new">Create New Person</a>
+    <!-- Aligning element horizontally using UI KIt -->
+    <h1 class="uk-position-relative uk-position-center">People List</h1>
+    <!-- Creating Grid. UI kit -->
+    <div uk-grid>
+      <!-- Retrieving all people. Looping through people object.-->
+      <% for(let person of people) { %>
+        <div class="uk-width-1-3@m">
+            <div>
+                <div class="uk-card uk-card-default uk-card-small uk-card-body">
+                    <!-- Aligning text -->
+                    <h3 class="uk-card-title uk-text-center">
+                      <!-- Link to view individual person -->
+                      <a href=/people/<%= person.id %>>
+                        <%= person.name %>
+                      </a>
+                    </h3>
+                </div>
+            </div>
+        </div>
+      <% } %>
+    </div>
   </body>
 </html>

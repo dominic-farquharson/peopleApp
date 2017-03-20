@@ -7,15 +7,15 @@
   <body>
     <!-- Header Partial -->
     <% include ../partials/header.ejs %>
-    <div>
-      <h1>Editing</h1>
+    <div class=" uk-position-center ">
+      <h1>Editing <%= person.name %></h1>
       <!-- Using method override to perform a post request -->
       <form action="/people/<%= person.id %>?_method=PUT" method="POST">
         <!-- Input containing name  -->
         <input type="text" name="name" value= <%= person.name %> required />
         <!-- Input containing favorite city -->
         <input type="text" name="favoriteCity" value=<%= person.favoriteCity %> required />
-        <input type="submit" value="Edit <%= person.name %>" />
+        <input class="uk-button uk-button-primary" type="submit" value="Edit <%= person.name %>" />
       </form>
 
 

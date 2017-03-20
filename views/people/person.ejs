@@ -7,22 +7,27 @@
   <body>
     <!-- Header Partial -->
     <% include ../partials/header.ejs %>
-    <div>
+    <div class="person uk-position-center">
       <!-- Name property -->
-      <p><%= person.name %></p>
+      <p><span>Name:</span> <%= person.name %></p>
       <!-- FavoriteCity property -->
-      <p><%= person.favoriteCity %> </p>
-      <div>
-        <!-- Anchor linking to edit route -->
-        <a href=/people/<%= person.id %>/edit>
-          Edit
-        </a>
-      </div>
-      <div>
-        <!-- Using method overide to perform DELETE request -->
-        <form action="/people/<%=person.id%>?_method=DELETE" method="POST">
-          <input type="submit" value="Delete <%= person.name %>" />
-        </form>
+      <p><span>Favorite City:</span> <%= person.favoriteCity %> </p>
+      <!-- Id of person -->
+      <p><span>Id:</span> <%= person.id %> </p>
+      <!-- Aligining buttons -->
+      <div uk-grid>
+        <div>
+          <!-- Anchor linking to edit route -->
+          <a class="uk-button uk-button-primary" href=/people/<%= person.id %>/edit>
+            Edit
+          </a>
+        </div>
+        <div>
+          <!-- Using method overide to perform DELETE request -->
+          <form action="/people/<%=person.id%>?_method=DELETE" method="POST">
+            <input class="uk-button uk-button-danger" type="submit" value="Delete" />
+          </form>
+        </div>
       </div>
 
     </div>

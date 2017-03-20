@@ -2,10 +2,14 @@
 <html>
   <!-- Head Partial -->
   <% include partials/head.ejs %>
-  <body>
+  <body id="home">
     <!-- Importing Header Partial -->
     <% include partials/header.ejs %>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div class="uk-position-center welcome">
+      <h1>Welcome to the <%= title %></h1>
+      <div>
+        <a class="uk-button uk-button-primary" href="/people"> Get Started</a>
+      </div>
+    </div>
   </body>
 </html>
