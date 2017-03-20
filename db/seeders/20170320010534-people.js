@@ -3,22 +3,30 @@
 module.exports = {
   up: function (queryInterface, Sequelize) {
 
-      return queryInterface.bulkInsert('Person', [
+      return queryInterface.bulkInsert('People', [
         {
           name: 'Sean',
-          favoriteCity: "New York"
+          favoriteCity: "New York",
+          createdAt: "2017-03-19",
+          updatedAt: "2017-03-19"
         },
         {
           name: 'Phil',
-          favoriteCity: "Queens"
+          favoriteCity: "Queens",
+          createdAt: "2017-03-19",
+          updatedAt: "2017-03-19"
         },
         {
           name: 'Dominic',
-          favoriteCity: "Boston"
+          favoriteCity: "Boston",
+          createdAt: "2017-03-19",
+          updatedAt: "2017-03-19"
         },
         {
           name: 'Alex',
-          favoriteCity: "Chicago"
+          favoriteCity: "Chicago",
+          createdAt: "2017-03-19",
+          updatedAt: "2017-03-19"
         },
 
       ], {});

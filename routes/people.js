@@ -5,7 +5,7 @@ const router = express.Router();
 
 /* GET request for list of people */
 router.get('/', function(req, res, next) {
-  res.send('People route');
+  res.render('people/person', {title:'Person Route'})
 });
 
 // exporting router
