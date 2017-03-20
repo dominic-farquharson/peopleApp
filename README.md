@@ -3,7 +3,7 @@
 ### Description
 App built with express. Full CRUD.
 
-#### [Link to Live Site](https://whispering-cliffs-21269.herokuapp.com/)
+#### [Link to Live Site](https://people-app.herokuapp.com/)
 
 ### Installation Instructions:
 
