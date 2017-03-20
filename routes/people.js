@@ -65,6 +65,20 @@ router.put('/:id', (req, res, next)=> {
   })
 });
 
+/* Route to handle DELETE request for a particular person */
+router.delete('/:id', (req, res, next)=> {
+  // using sequelize's destroy method to remove requested record from database
+  models.Person.destroy({
+    // Deleting person based off id from request object
+    where: {id: req.params.id}
+  })
+  .then( ()=> {
+    // redirecting to people page
+    res.redirect('/people');
+  })
+})
+
+
 
 
 /* Route for Posting New Person */

@@ -18,6 +18,12 @@
           Edit
         </a>
       </div>
+      <div>
+        <!-- Using method overide to perform DELETE request -->
+        <form action="/people/<%=person.id%>?_method=DELETE" method="POST">
+          <input type="submit" value="Delete <%= person.name %>" />
+        </form>
+      </div>
 
     </div>
 
