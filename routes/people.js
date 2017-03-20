@@ -38,6 +38,34 @@ router.get('/:id', (req, res, next) => {
   })
 });
 
+/* Get request for edit route */
+router.get('/:id/edit', (req, res, next)=> {
+  // finding requested person
+  models.Person.findById(req.params.id)
+  .then( (person)=> {
+    res.render('people/edit', {
+      // setting person's name as tab title
+      title: `Editing ${person.name}`,
+      person: person
+    })
+  })
+})
+
+/* Route for editing a user */
+router.put('/:id', (req, res, next)=> {
+  // updating requested person record. - using sequelize's update method
+  models.Person.update({
+    name: req.body.name,
+    favoriteCity:req.body.favoriteCity
+    // editing name where record matches id from req object
+  }, {where: {id: req.params.id} })
+  .then( ()=> {
+    // redirecting to person page to show edited data
+    res.redirect(`/people/${req.params.id}`)
+  })
+});
+
+
 
 /* Route for Posting New Person */
 router.post('/', (req, res, next) => {
