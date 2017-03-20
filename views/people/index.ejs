@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <!-- Head Partial -->
+  <% include ../partials/head.ejs %>
+  <body>
+    <!-- Header Partial -->
+    <% include ../partials/header.ejs %>
+    <!-- Redirecting to Create Person form -->
+    <a href="/people/new">Create New Person</a>
+    <% for(let person of people) { %>
+      <div> <%= person.name %> </div>
+    <% } %>
+
+  </body>
+</html>

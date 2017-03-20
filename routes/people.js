@@ -6,8 +6,18 @@ const router = express.Router();
 const models = require('../db/models/index');
 
 /* GET request for list of people */
-router.get('/', function(req, res, next) {
-  res.render('people/person', {title:'Person Route'})
+router.get('/', (req, res, next) => {
+  // using find all method to select all people from database
+  models.Person.findAll({})
+  // promise - renders all people after findall method
+    .then( (people)=> {
+      res.render('people/index', {
+        // tab title
+        title:'People',
+        // passing people as JS object
+        people: people
+      })
+    })
 });
 
 /* Route for Creating a New Person */
