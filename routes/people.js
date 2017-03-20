@@ -25,6 +25,20 @@ router.get('/new', (req, res, next) => {
   res.render('people/new', {title:'Create a Person'})
 });
 
+/* GET request for a specific person */
+router.get('/:id', (req, res, next) => {
+  /* Using sequelize's findbyid method to retrieve requested user */
+  models.Person.findById(req.params.id)
+  .then( (person)=> {
+    res.render('people/person', {
+      // setting person's name as tab title
+      title: `${person.name}`,
+      person: person
+    })
+  })
+});
+
+
 /* Route for Posting New Person */
 router.post('/', (req, res, next) => {
   // Creating a new Person record, using the sequelize model create method
@@ -36,7 +50,7 @@ router.post('/', (req, res, next) => {
   })
   // using promise to redirect to people route after successful post to /people
   .then( ()=> {
-    res.redirect('/people')
+    res.redirect('/people/')
   });
 });
 
