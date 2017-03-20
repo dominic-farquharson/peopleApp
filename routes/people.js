@@ -18,6 +18,9 @@ router.get('/', (req, res, next) => {
         people: people
       })
     })
+    .catch( (error)=> {
+      res.send(`Person ${req.params.id} does not exist`)
+    })
 });
 
 /* Route for Creating a New Person */
@@ -36,6 +39,9 @@ router.get('/:id', (req, res, next) => {
       person: person
     })
   })
+  .catch( (error)=> {
+    res.send(`Person ${req.params.id} does not exist`)
+  })
 });
 
 /* Get request for edit route */
@@ -48,6 +54,9 @@ router.get('/:id/edit', (req, res, next)=> {
       title: `Editing ${person.name}`,
       person: person
     })
+  })
+  .catch( (error)=> {
+    res.send(`Person ${req.params.id} does not exist and can't be edited`)
   })
 })
 
