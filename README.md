@@ -3,8 +3,6 @@
 ### Description
 App built with express. Full CRUD.
 
-#### [Link to Live Site](https://people-app.herokuapp.com/)
-
 ### Installation Instructions:
 
 1. Clone or download repo.
